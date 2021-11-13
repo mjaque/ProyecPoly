@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*  Pablo Ceballos
+    Ángel Manuel Fernández
+    Juan José Carrasco
+    Rubén Torres
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: rgb(41, 48, 54);
+}
+
+h1{
+    text-align: center;
+    color: rgb(41, 41, 41);
+}
+
+/***** NAV *****/
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgb(35, 41, 46);
+}
+
+nav > ul{
+    display: flex;
+}
+
+nav li > a{
+    display: block;
+    padding: 20px;
+    color: white;
+}
+
+nav li > a:hover{
+    background-color: rgb(36, 43, 49);
+}
+
+/***** FORM | DIV *****/
+form, body > div{
+    width: 58.333333333%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+}

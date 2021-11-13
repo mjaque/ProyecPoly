@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*  Pablo Ceballos
+    Ángel Manuel Fernández
+    Juan José Carrasco
+    Rubén Torres
+*/
+
+/***** TABLE *****/
+table{
+    border-collapse: collapse;
+    margin: 40px auto;
+    text-align: center;
+}
+
+table tr:first-child{
+    background-color: rgb(36, 43, 49);
+    color: white;
+}
+
+table tr{
+    border-bottom: 2px solid #ccc;
+}
+
+table tr:nth-child(2n){
+    background-color: rgb(206, 206, 206);
+}
+
+table tr > th,
+table tr > td{
+    padding: 15px;
+}

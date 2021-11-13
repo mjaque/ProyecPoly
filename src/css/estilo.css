@@ -1,0 +1,62 @@
+/*
+    Empresa: Widmark S.L
+    Fecha: 15-10-2021
+    Autor: Sergio Matamoros Delgado
+
+    Descripción: Tablero básico de "PROYECPOLY"
+
+
+    Notas: Las clases que heredan de los hijos están añadidas para en un
+    posible futuro poder ampliar o hacer mejoras a las mismas.
+    Por el momento no tienen ninguna utilidad real.
+*/
+section {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/*
+    ===============================================================================
+    *   *   *   *   *   *   *   *  SECCIÓN TOP   *       *   *   *   *
+    ===============================================================================
+*/
+div.horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+div.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/*
+    - Seleccionamos todos los items del hijo.
+*/
+div.horizontal>img {
+  background-color: white;
+  border: 2px solid black;
+  height: 100px;
+  width: auto;
+}
+
+div.horizontal>img:nth-child(1), div.horizontal>img:nth-last-child(1) {
+  height: 100px;
+  width: 100px;
+}
+
+div.vertical>img {
+  border: 2px solid black;
+  height: auto;
+  width: 100px;
+}
+
+#divCentral img {
+  height: 362px;
+}
