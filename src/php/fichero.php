@@ -1,5 +1,9 @@
 <?php
-
+    $licitacion->$numero=$_POST['iLicitacion'];
+    $licitacion->$empresa=$_POST['iEmpresa'];
+    $licitacion->$importe=$_POST['iImporte'];
+    $myJSON = json_encode($licitacion);
+    echo $myJSON;
     $licitaciones = array(        
         1 => array(
             'codigo' => 'ABC123',
