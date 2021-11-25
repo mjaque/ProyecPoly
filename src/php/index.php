@@ -22,7 +22,7 @@
                 </li>
             </ul>
         </nav>
-        <form action="php/fichero.php" method="post">
+        <form action="fichero.php" method="post">
             <h1>Solicitar Licitación</h1>
             <!--LICITACIÓN-->
             <div class="row">
@@ -30,7 +30,7 @@
                     <label for="iLicitacion">Licitación</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="iLicitacion" placeholder="Licitación" />
+                    <input type="text" id="iLicitacion" name="iLicitacion" placeholder="Licitación" />
                 </div>
             </div>
             <!--EMPRESA-->
@@ -39,7 +39,7 @@
                     <label for="iEmpresa">Empresa</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="iEmpresa" placeholder="Empresa" />
+                    <input type="text" id="iEmpresa" name="iEmpresa" placeholder="Empresa" />
                 </div>
             </div>
             <!--IMPORTE-->
@@ -48,12 +48,12 @@
                     <label for="iImporte">Importe</label>
                 </div>
                 <div class="col-75">
-                    <input type="number" id="iImporte" min="500" placeholder="Importe" />
+                    <input type="number" id="iImporte" name="iImporte" min="500" placeholder="Importe" />
                 </div>
             </div>
             <!-- SUBMIT -->
             <div class="row">
-              <input type="submit" value="Submit">
+              <input type="submit" value="Submit" name="volver">
             </div>
         </form>
     </body>
