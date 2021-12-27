@@ -1,7 +1,5 @@
 <?php
 
-    require_once 'fichero.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +18,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">SOLICITAR</a>
+                    <a href="index.php">SOLICITAR</a>
                 </li>
                 <li>
                     <a href="#">MOSTRAR</a>
@@ -32,24 +30,35 @@
             <table>
                 <tr>
                     <th>Código</th>
-                    <th>Precio</th>
-                    <th>HappyPoints</th>
+                    <!--<th>Precio</th>-->
+                    <!--<th>HappyPoints</th>-->
                     <th>Adjudicatario</th>
                     <th>Oferta</th>
                 </tr>
                 <?php
-
-                    foreach($licitaciones as $licitacion){
-                        echo '<tr>'.
-                            '<td>' . $licitacion['codigo'] . '</td>'.
-                            '<td>' . $licitacion['precio'] . '</td>'.
-                            '<td>' . $licitacion['hp'] . '</td>'.
-                            '<td>' . $licitacion['adjudicatario'] . '</td>'.
-                            '<td>' . $licitacion['oferta'] . '</td>'.
-                        '</tr>';
+                    //extrae el contenido del fichero JSON
+                    $contenido=file_get_contents('../js/results.json');
+                    $datos=json_decode($contenido, true);
+                    //muestra el contenido del fichero fila a fila
+                    foreach($datos as $indice){
+                        echo '<tr>';
+                        foreach($indice as $dato){
+                            echo '<td>' . $dato . '</td>';
+                        }
+                        echo '</tr>';
                     }
+                    /*echo '<tr>'.
+                            '<td>' . $dato['Numero'] . '</td>'.
+                            '<td>' . $dato['Importe'] . '</td>'.
+                            '<td>' . $licitacion['hp'] . '</td>'.
+                            '<td>' . $dato['Empresa'] . '</td>'.
+                            '<td>' . $licitacion['oferta'] . '</td>'.
+                        '</tr>';*/
+                    
+                   
                 ?>
             </table>
+            <a href="ganador.php"><button class="button-9" role="button">Comprobar Ganador</button></a>
         </div>
     </body>
 </html>

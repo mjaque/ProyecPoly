@@ -1,20 +1,29 @@
 <?php
-
-    $licitaciones = array(        
-        1 => array(
-            'codigo' => 'ABC123',
-            'precio' => 5000,
-            'hp' => 20,
-            'adjudicatario' => 'Beberly Tronas',
-            'oferta' => 1500
-        ),
-        2 => array(
-            'codigo' => 'ABC124',
-            'precio' => 6000,
-            'hp' => 30,
-            'adjudicatario' => 'Tyrall',
-            'oferta' => 2500
-        )
+    //recibe los valores del cuestionario
+    $numero=$_POST['iLicitacion'];
+    $empresa=$_POST['iEmpresa'];
+    $importe=$_POST['iImporte'];
+    $arrayIntro = array
+    (
+        'Numero'=> $numero,
+        'Empresa'=> $empresa,
+        'importe'=> $importe
     );
+    //extrae el contenido del fichero JSON
+    $contenido=file_get_contents('../js/results.json');
+    $datos=json_decode($contenido, true);
+    
+    //añade los valores del formulario al fichero JSON 
+    $datos[]=$arrayIntro;
+    $final= json_encode($datos);
+    if(file_put_contents('../js/results.json', $final)){
+        header("Location: mostrar.php");
+    }else{
+        echo 'error';
+    }
+   
+
+
+
 
 ?>
